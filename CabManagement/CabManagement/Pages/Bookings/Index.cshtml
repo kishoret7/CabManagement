@@ -26,7 +26,7 @@
                 @Html.DisplayNameFor(model => model.Booking[0].BookingMethod)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Booking[0].Cab)
+                @Html.DisplayNameFor(model => model.Booking[0].Cab.MakeModel)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Booking[0].PriceEstimate)
@@ -61,7 +61,7 @@
                 }
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Cab.CabId)
+                @Html.DisplayFor(modelItem => item.Cab.MakeModel)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PriceEstimate)

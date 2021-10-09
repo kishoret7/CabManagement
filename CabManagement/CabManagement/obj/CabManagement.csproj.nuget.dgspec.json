@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kisho\\source\\repos\\CabManagement\\CabManagement\\CabManagement.csproj": {}
+    "C:\\Users\\kisho\\Documents\\GitHub\\CabManagement\\CabManagement\\CabManagement\\CabManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kisho\\source\\repos\\CabManagement\\CabManagement\\CabManagement.csproj": {
+    "C:\\Users\\kisho\\Documents\\GitHub\\CabManagement\\CabManagement\\CabManagement\\CabManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kisho\\source\\repos\\CabManagement\\CabManagement\\CabManagement.csproj",
+        "projectUniqueName": "C:\\Users\\kisho\\Documents\\GitHub\\CabManagement\\CabManagement\\CabManagement\\CabManagement.csproj",
         "projectName": "CabManagement",
-        "projectPath": "C:\\Users\\kisho\\source\\repos\\CabManagement\\CabManagement\\CabManagement.csproj",
+        "projectPath": "C:\\Users\\kisho\\Documents\\GitHub\\CabManagement\\CabManagement\\CabManagement\\CabManagement.csproj",
         "packagesPath": "C:\\Users\\kisho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kisho\\source\\repos\\CabManagement\\CabManagement\\obj\\",
+        "outputPath": "C:\\Users\\kisho\\Documents\\GitHub\\CabManagement\\CabManagement\\CabManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kisho\\AppData\\Roaming\\NuGet\\NuGet.Config",
