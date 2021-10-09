@@ -1,0 +1,71 @@
+﻿@page
+@model CabManagement.Pages.Routes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Routes</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Route[0].Distance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Route[0].Cab)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Route[0].RouteCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Route[0].EstimatedTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Route[0].Tolls)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Route) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Distance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cab.CabId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RouteCategory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstimatedTime)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Tolls)
+            </td>*@
+
+            <td>
+                @if (item.Tolls)
+                {
+                    <span class="badge badge-danger">Yes :(</span>
+                }
+                else
+                {
+                    <span class="badge badge-success">No!!</span>
+                }
+
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.RouteId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.RouteId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.RouteId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

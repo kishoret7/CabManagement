@@ -1,0 +1,101 @@
+﻿@page
+@model CabManagement.Pages.Routes.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Route Details - @Model.Route.RouteId</h1>
+
+<div>
+   
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Route.Distance)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Route.Distance)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Route.Cab)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Route.Cab.CabId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Route.RouteCategory)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Route.RouteCategory)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Route.EstimatedTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Route.EstimatedTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Route.Tolls)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Route.Tolls)
+        </dd>
+    </dl>
+</div>
+
+
+@if (Model.Route.Bills.Any())
+{
+    <div>
+        <h4> Bills pertaining to this route </h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Route.Bills[0].Cab)</th>
+                    <th>@Html.DisplayNameFor(model => model.Route.Bills[0].GeneratedTime)</th>
+                    <th>@Html.DisplayNameFor(model => model.Route.Bills[0].BillAmount)</th>
+                    <th>@Html.DisplayNameFor(model => model.Route.Bills[0].PaymentStatus)</th>
+                    <th>Details</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in Model.Route.Bills)
+                {
+                <tr>
+                    <td>@Html.DisplayFor(modelitem => item.CabId)</td>
+                    <td>@Html.DisplayFor(modelitem => item.GeneratedTime)</td>
+                    <td>@Html.DisplayFor(modelitem => item.BillAmount)</td>
+                    <td>@Html.DisplayFor(modelitem => item.PaymentStatus)</td>
+                    <td>
+                        <a asp-page="/Cabs/Details" asp-route-id="@item.CabId">Cab Details</a>
+                    </td>
+                </tr>
+                }
+
+                <tr>
+                    <th></th>
+                    <th>Total Bookings</th>
+                    <th>@Model.Route.Bills.Count</th>
+                    <th></th>
+                    <th></th>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+}
+else
+{
+    <div class="alert-warning">No Cabs have taken this route.</div>
+}
+
+
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Route.RouteId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,52 @@
+﻿@page
+@model CabManagement.Pages.Bills.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create New Payment</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Bill.BillAmount" class="control-label"></label>
+                <input asp-for="Bill.BillAmount" class="form-control" />
+                <span asp-validation-for="Bill.BillAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bill.CabId" class="control-label"></label>
+                <select asp-for="Bill.CabId" class ="form-control" asp-items="ViewBag.CabId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bill.RouteId" class="control-label"></label>
+                <select asp-for="Bill.RouteId" class ="form-control" asp-items="ViewBag.RouteId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bill.GeneratedTime" class="control-label"></label>
+                <input asp-for="Bill.GeneratedTime" class="form-control" />
+                <span asp-validation-for="Bill.GeneratedTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bill.PaymentStatus" class="control-label"></label>
+                <input asp-for="Bill.PaymentStatus" class="form-control" />
+                <span asp-validation-for="Bill.PaymentStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

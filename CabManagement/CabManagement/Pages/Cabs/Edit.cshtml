@@ -1,0 +1,60 @@
+﻿@page
+@model CabManagement.Pages.Cabs.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Cab Details- @Model.Cab.CabId</h1>
+
+<h4>Cab</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Cab.CabId" />
+            <div class="form-group">
+                <label asp-for="Cab.CabDriverName" class="control-label"></label>
+                <input asp-for="Cab.CabDriverName" class="form-control" />
+                <span asp-validation-for="Cab.CabDriverName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cab.CabDriverPhNumber" class="control-label"></label>
+                <input asp-for="Cab.CabDriverPhNumber" class="form-control" />
+                <span asp-validation-for="Cab.CabDriverPhNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cab.MakeModel" class="control-label"></label>
+                <input asp-for="Cab.MakeModel" class="form-control" />
+                <span asp-validation-for="Cab.MakeModel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cab.CabRatings" class="control-label"></label>
+                <input asp-for="Cab.CabRatings" class="form-control" />
+                <span asp-validation-for="Cab.CabRatings" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cab.CabType" class="control-label"></label>
+                <input asp-for="Cab.CabType" class="form-control" />
+                <span asp-validation-for="Cab.CabType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cab.RegistrationNumber" class="control-label"></label>
+                <input asp-for="Cab.RegistrationNumber" class="form-control" />
+                <span asp-validation-for="Cab.RegistrationNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

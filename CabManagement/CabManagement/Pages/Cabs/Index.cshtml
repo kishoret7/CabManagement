@@ -1,0 +1,66 @@
+﻿@page
+@model CabManagement.Pages.Cabs.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Available Cabs</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cab[0].CabDriverName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cab[0].CabDriverPhNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cab[0].MakeModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cab[0].CabRatings)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cab[0].CabType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cab[0].RegistrationNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Cab) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CabDriverName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CabDriverPhNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MakeModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CabRatings)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CabType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistrationNumber)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CabId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CabId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CabId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

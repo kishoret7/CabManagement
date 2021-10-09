@@ -1,0 +1,152 @@
+﻿@page
+@model CabManagement.Pages.OurTeamModel
+@{
+}
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<body>
+    <!-- Meet Our Team -->
+    <section id="team">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h2>Meet Our Team</h2>
+                    <p> Voyager Cabs have been offering services since 2015. Founded by our very talented Kishore Kumar, Voyager has grown exponentially in the last couple of years. It is led by Pranav Naphad, an accomplished COO, with over 6 years experience in Management. Our young CTO Laasya Akunuru has changed the game with her new ideas in technology. </p>
+                </div>
+            </div>
+
+            <Center>
+                @*<div class="row">*@
+
+                @* <div class="col-lg-3 col-md-8">*@
+                <div class="member">
+                    <div class="member-img">
+                        <img src="https://scontent-ort2-2.xx.fbcdn.net/v/t1.18169-9/18881945_1477036515700423_1148121453728292519_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=UxUj0k-aGDEAX9qPYOT&_nc_ht=scontent-ort2-2.xx&oh=9b3da8ad68af7b5a4530756e6187e4e7&oe=618166AC" class="img-fluid" alt="">
+                    </div>
+                    <div class="member-info">
+                        <h4>PRANAV NAPHAD</h4>
+                        <span>COO</span>
+
+                    </div>
+                </div>
+                @* </div>*@
+
+                @*<div class="col-lg-3 col-md-8">*@
+                <div class="member">
+                    <div class="member-img">
+                        <img src="https://scontent-ort2-2.xx.fbcdn.net/v/t1.6435-9/243762752_131491159224646_5474029400597066696_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=K_u9n9VN2coAX-EPT-W&_nc_ht=scontent-ort2-2.xx&oh=cfb6d650726eb18395c773904e0acadf&oe=6184B7CA" class="img-fluid" alt="">
+                    </div>
+                    <div class="member-info">
+                        <h4>KISHORE KUMAR T</h4>
+                        <span>CEO</span>
+
+                    </div>
+                </div>
+                @*</div>*@
+
+
+
+                @*<div class="col-lg-3 col-md-8">*@
+                <div class="member">
+                    <div class="member-img">
+                        <img src="https://avatars.services.sap.com/images/laasya.akunuru.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="member-info">
+                        <h4>LAASYA AKUNURU</h4>
+                        <span>CTO</span>
+
+                    </div>
+                </div>
+               
+
+            </Center>
+
+           
+
+
+        </div>
+
+
+        
+
+
+    </section>
+</body>
+</html>
+
+<style>
+    #team {
+        padding: 60px 0;
+        text-align: center;
+        background-color: black;
+        color: #fff;
+    }
+
+        #team h2 {
+            position: relative;
+            padding: 0px 0px 15px;
+        }
+
+        #team p {
+            font-size: 15px;
+            font-style: italic;
+            padding: 0px;
+            margin: 25px 0px 40px;
+        }
+
+        #team h2::after {
+            content: '';
+            border-bottom: 2px solid #fff;
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            left: 0px;
+            width: 90px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        #team .member {
+            margin-bottom: 20px;
+            width: 250px;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 15px 0px 15px 0px;
+            box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.4);
+        }
+
+            #team .member .member-info {
+                display: block;
+                position: absolute;
+                bottom: 0px;
+                left: -200px;
+                transition: 0.4s;
+                padding: 15px 0;
+                background: rgba(0, 0, 0, 0.4);
+            }
+
+            #team .member:hover .member-info {
+                left: 0px;
+                right: 0px;
+            }
+
+            #team .member h4 {
+                font-weight: 700;
+                margin-bottom: 2px;
+                font-size: 18px;
+                color: #fff;
+            }
+
+            #team .member span {
+                font-style: italic;
+                display: block;
+                font-size: 13px;
+            }
+</style>

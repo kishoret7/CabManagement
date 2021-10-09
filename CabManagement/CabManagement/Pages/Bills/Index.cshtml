@@ -1,0 +1,83 @@
+﻿@page
+@model CabManagement.Pages.Bills.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Bill Entries</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Bill[0].BillAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bill[0].Cab)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bill[0].Route)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bill[0].GeneratedTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bill[0].PaymentStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Bill) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cab.CabId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Route.RouteId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneratedTime)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.PaymentStatus)
+            </td>*@
+
+            <td>
+                @if (item.PaymentStatus == "Paid")
+                {
+                    <span class="badge badge-success">Paid</span>
+                }
+                else
+                {
+                    <span class="badge badge-dark">Pending</span>
+
+                }
+
+<td>
+
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.BillId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.BillId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.BillId">Delete</a>
+
+                @if (item.PaymentStatus != "Paid")
+                {
+                    <text>|</text> <a asp-page="./UpdateStatus" asp-route-id="@item.BillId">Update</a>
+                }
+
+
+            </td>
+
+
+        </tr>
+}
+    </tbody>
+</table>

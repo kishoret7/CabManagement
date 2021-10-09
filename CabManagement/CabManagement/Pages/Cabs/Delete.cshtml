@@ -1,0 +1,58 @@
+﻿@page
+@model CabManagement.Pages.Cabs.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete Cab - @Model.Cab.CabId</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Cab</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cab.CabDriverName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cab.CabDriverName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cab.CabDriverPhNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cab.CabDriverPhNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cab.MakeModel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cab.MakeModel)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cab.CabRatings)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cab.CabRatings)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cab.CabType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cab.CabType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cab.RegistrationNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cab.RegistrationNumber)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Cab.CabId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

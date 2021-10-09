@@ -1,0 +1,35 @@
+﻿@page
+@model CabManagement.Pages.Bills.UpdateStatusModel
+
+
+
+@{
+    ViewData["Title"] = "UpdatePayment";
+}
+<body style="background-color:antiquewhite">
+    <h4>Update the Bill Payment Status</h4>
+
+    <h5>Bill Number - @Model.Bill.BillId of amount $@Model.Bill.BillAmount</h5>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Bill.BillId" />
+
+                <div class="form-group">
+                    <input type="submit" value="Update Payment" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div>
+        <a asp-page="./Index">Back to List</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>
